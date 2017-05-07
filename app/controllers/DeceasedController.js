@@ -8,12 +8,12 @@
 	DeceasedController.$inject = ['$scope', '$rootScope', 'deceasedService', '$state', '$stateParams'];
 	
 	function DeceasedController($scope, $rootScope, deceasedService, $state, $stateParams) {
-		$scope.deceasedArray = [];
+		$scope.deceaseds = [];
 
 		if ($state.current.name == "deceaseds") {
 			$rootScope.Title = "Deceased Listing";
 			deceasedService.getDeceaseds().then(function(res) {
-				$scope.deceasedArray = res.data;
+				$scope.deceaseds = res.data;
 			}).catch(function(err) {
 				console.log(err);
 			});

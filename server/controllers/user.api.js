@@ -29,7 +29,7 @@ router.get("/", function(req, res) {
 			res.send("error");
 			return;
 		}
-		res.send("Usuario creado");
+		res.send("created");
 	});
 	
 }).put("/:id", function(req, res) {
@@ -42,7 +42,7 @@ router.get("/", function(req, res) {
 				res.send("error");
 				return;
 			}
-			res.send("Usuario actualizado");
+			res.send("updated");
 		});
 
 }).delete("/:id", function(req, res) {

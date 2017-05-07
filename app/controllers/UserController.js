@@ -13,7 +13,6 @@
 		if ($state.current.name == "users") {
 			$rootScope.Title = "User Listing";
 			userService.getUsers().then(function(res) {
-				console.log(res.data);
 				$scope.users = res.data;
 			}).catch(function(err) {
 				console.log(err);

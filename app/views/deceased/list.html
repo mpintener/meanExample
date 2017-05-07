@@ -1,0 +1,24 @@
+<h2>Deceaseds Listing</h2>
+
+<table class="table" ng-if="deceaseds.length>0">
+	<tr>
+		<th>SNo.</th>
+		<th>First Name</th>
+		<th>Paternal Last Name</th>
+		<th>Maternal Last Name</th>
+		<th>Actions</th>
+	</tr>
+	<tr ng-repeat="deceased in deceaseds">
+		<td>{{ deceased._id }}</td>
+		<td>{{ deceased.firstName }}</td>
+		<td>{{ deceased.paternalLastName }}</td>
+		<td>{{ deceased.maternalLastName }}</td>
+		<td>
+			<a ui-sref="edit({id:deceased._id})">Edit</a> |
+			<a href="#" ng-click="deleteDeceased(deceased._id)">Delete</a>
+		</td>
+	</tr>
+</table>
+<div ng-if="deceaseds.length==0">
+	No record found !!
+</div>

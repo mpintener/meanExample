@@ -1,0 +1,68 @@
+<h2 ng-show="deceased._id!=null">Edit</h2>
+<h2 ng-hide="deceased._id!=null">Create</h2>
+<hr>
+<form name="deceasedForm" ng-submit="saveData(deceased)" novalidate class="form-horizontal">
+	<div class="form-group">
+		<label class="col-md-2">DNI</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="deceased.dni" name="dni" ng-required="true" class="form-control"/>
+			<p ng-show="deceasedForm.dni.$error.required && (deceasedForm.$submitted || deceasedForm.dni.$dirty)" class="text-danger">Please Enter DNI</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">First Name</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="deceased.firstName" name="firstName" ng-required="true" class="form-control"/>
+			<p ng-show="deceasedForm.firstName.$error.required && (deceasedForm.$submitted || deceasedForm.firstName.$dirty)" class="text-danger">Please Enter Name</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">Paternal Last Name</label>
+		<div class="col-md-10">
+			<textarea name="paternalLastName" ng-model="deceased.paternalLastName" ng-required="true" class="form-control"></textarea>
+			<p ng-show="deceasedForm.paternalLastName.$error.required && (deceasedForm.$submitted || deceasedForm.paternalLastName.$dirty)" class="text-danger">Please Enter Address</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">Maternal Last Name</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="deceased.maternalLastName" name="maternalLastName" ng-required="true" class="form-control"/>
+			<p ng-show="deceasedForm.maternalLastName.$error.required && (deceasedForm.$submitted || deceasedForm.maternalLastName.$dirty)" class="text-danger">Please Enter Maternal Last Name</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">Birth Date</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="deceased.birthDate" name="birthDate" ng-required="true" class="form-control"/>
+			<p ng-show="deceasedForm.birthDate.$error.required && (deceasedForm.$submitted || deceasedForm.birthDate.$dirty)" class="text-danger">Please Enter Birth Date</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">Nationality</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="deceased.nationality" name="nationality" ng-required="true" class="form-control"/>
+			<p ng-show="deceasedForm.nationality.$error.required && (deceasedForm.$submitted || deceasedForm.nationality.$dirty)" class="text-danger">Please Enter Birth Date</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">City</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="deceased.city" name="city" ng-required="true" class="form-control"/>
+			<p ng-show="deceasedForm.city.$error.required && (deceasedForm.$submitted || deceasedForm.city.$dirty)" class="text-danger">Please Enter Birth Date</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">Status</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="deceased.status" name="status" ng-required="true" class="form-control"/>
+			<p ng-show="deceasedForm.status.$error.required && (deceasedForm.$submitted || deceasedForm.status.$dirty)" class="text-danger">Please Enter Birth Date</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<input type="submit" value="Update" class="btn btn-primary" ng-show="deceased._id!=null"/>
+			<input type="submit" value="Save" class="btn btn-primary" ng-hide="deceased._id!=null"/>
+			<a ui-sref="deceaseds" class="btn btn-warning">Cancel</a>
+		</div>
+	</div>
+</form>

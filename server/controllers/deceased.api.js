@@ -45,7 +45,7 @@ router.get("/", function(req, res) {
 				res.send(err);
 				return;
 			}
-			res.send("Persona fallecida actualizada");
+			res.send("updated");
 		});
 
 }).delete("/:id", function(req, res) {

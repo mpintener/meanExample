@@ -6,5 +6,6 @@ router.use("/user", require("../controllers/user.api"));
  
 //add here other api routes
 router.use("/deceased", require("../controllers/deceased.api"));
+router.use("/status", require("../controllers/status.api"));
  
 module.exports = router;

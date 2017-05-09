@@ -25,22 +25,39 @@
 		// 	controller: "userController"
 		// });
 
-		$stateProvider.state("deceaseds", {
+		// $stateProvider.state("deceaseds", {
+		// 	url: "/",
+		// 	templateUrl: "/views/deceased/list.html",
+		// 	controller: "deceasedController"
+		// }).state("create", {
+		// 	url: "/create",
+		// 	templateUrl: "/views/deceased/create.html",
+		// 	controller: "deceasedController"
+		// }).state("edit", {
+		// 	url: "/edit/:id",
+		// 	templateUrl: "/views/deceased/create.html",
+		// 	controller: "deceasedController"
+		// }).state("details", {
+		// 	url: "/details/:id",
+		// 	templateUrl: "/views/deceased/details.html",
+		// 	controller: "deceasedController"
+		// });
+		$stateProvider.state("statuses", {
 			url: "/",
-			templateUrl: "/views/deceased/list.html",
-			controller: "deceasedController"
+			templateUrl: "/views/status/list.html",
+			controller: "statusController"
 		}).state("create", {
 			url: "/create",
-			templateUrl: "/views/deceased/create.html",
-			controller: "deceasedController"
+			templateUrl: "/views/status/create.html",
+			controller: "statusController"
 		}).state("edit", {
 			url: "/edit/:id",
-			templateUrl: "/views/deceased/create.html",
-			controller: "deceasedController"
+			templateUrl: "/views/status/create.html",
+			controller: "statusController"
 		}).state("details", {
 			url: "/details/:id",
-			templateUrl: "/views/deceased/details.html",
-			controller: "deceasedController"
+			templateUrl: "/views/status/details.html",
+			controller: "statusController"
 		});
 	})
 	.constant("globalConfig", {

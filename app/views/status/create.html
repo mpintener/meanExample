@@ -1,0 +1,35 @@
+<h2 ng-show="status._id!=null">Edit</h2>
+<h2 ng-hide="status._id!=null">Create</h2>
+<hr>
+<form name="statusForm" ng-submit="saveData(status)" novalidate class="form-horizontal">
+	<div class="form-group">
+		<label class="col-md-2">Nombre</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="status.label" name="label" ng-required="true" class="form-control"/>
+			<p ng-show="statusForm.label.$error.required && (statusForm.$submitted || statusForm.label.$dirty)" class="text-danger">Debes ingresar un nombre</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">Código</label>
+		<div class="col-md-10">
+			<input type="text" ng-model="status.code" name="code" ng-required="true" class="form-control"/>
+			<p ng-show="statusForm.code.$error.required && (statusForm.$submitted || statusForm.code.$dirty)" class="text-danger">Debes ingresar un código</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2">Estado Padre</label>
+		<div class="col-md-10">
+			<select name="parent" ng-model="status.parent" class="form-control">
+				<option ng-repeat="status in statuses" ng-model="status.parent">No posee</option>
+				<option ng-repeat="status in statuses" ng-model="status.parent">{{ status.label }}</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<input type="submit" value="Update" class="btn btn-primary" ng-show="status._id!=null"/>
+			<input type="submit" value="Save" class="btn btn-primary" ng-hide="status._id!=null"/>
+			<a ui-sref="statuses" class="btn btn-warning">Cancel</a>
+		</div>
+	</div>
+</form>

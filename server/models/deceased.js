@@ -16,6 +16,6 @@ var deceasedSchema = new Schema({
 	versionKey: false
 });
 
-var deceased = mongoose.model('deceaseds', deceasedSchema);
+var deceased = mongoose.model('Deceased', deceasedSchema);
 
 module.exports = deceased;

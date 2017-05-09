@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-md-12">
+		<!-- START DEFAULT DATATABLE -->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table datatable" ng-if="statuses.length>0">
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Código</th>
+								<th>Estado Padre</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="status in statuses">
+								<td>{{ status.label }}</td>
+								<td>{{ status.code }}</td>
+								<td>{{ status.parent }}</td>
+								<td>
+									<a ui-sref="edit({id:status._id})">Edit</a> |
+									<a href="#" ng-click="deleteUser(status._id)">Delete</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div ng-if="statuses.length==0">
+					Sin datos
+				</div>
+			</div>
+		</div>
+		<!-- END DEFAULT DATATABLE -->
+	</div>
+</div>
+<script type="text/javascript" src="./public/js/plugins/datatables/jquery.dataTables.min.js"></script>
